@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:CalculatorX"
+             x:Class="CalculatorX.MainPage">
+
+    <Grid Margin="0,20,0,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="250"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Label x:Name="resultLabel" Text="" FontSize="40" Grid.Row="0" Grid.Column="0" Margin="10"/>
+            
+
+        <Button x:Name="number7Button" Text="7" FontSize="50" Grid.Row="1" Grid.Column="0" BackgroundColor="Gray"  Clicked="number7Button_Clicked"/>
+        <Button x:Name="number4Button" Text="4" FontSize="50" Grid.Row="2" Grid.Column="0" BackgroundColor="Gray"  Clicked="number4Button_Clicked"/>
+        <Button x:Name="number1Button" Text="1" FontSize="50" Grid.Row="3" Grid.Column="0" BackgroundColor="Gray"  Clicked="number1Button_Clicked"/>
+        <Button x:Name="number8Button" Text="8" FontSize="50" Grid.Row="1" Grid.Column="1" BackgroundColor="Gray" Clicked="number8Button_Clicked"/>
+        <Button x:Name="number5Button" Text="5" FontSize="50" Grid.Row="2" Grid.Column="1" BackgroundColor="Gray" Clicked="number5Button_Clicked"/>
+        <Button x:Name="number2Button" Text="2" FontSize="50" Grid.Row="3" Grid.Column="1" BackgroundColor="Gray" Clicked="number2Button_Clicked"/>
+        <Button x:Name="number9Button" Text="9" FontSize="50" Grid.Row="1" Grid.Column="2" BackgroundColor="Gray" Clicked="number9Button_Clicked"/>
+        <Button x:Name="number6Button" Text="6" FontSize="50" Grid.Row="2" Grid.Column="2" BackgroundColor="Gray" Clicked="number6Button_Clicked"/>
+        <Button x:Name="number3Button" Text="3" FontSize="50" Grid.Row="3" Grid.Column="2" BackgroundColor="Gray" Clicked="number3Button_Clicked"/>
+        <Button x:Name="number0Button" Text="0" FontSize="50" Grid.Row="4" Grid.Column="1" BackgroundColor="Gray" Clicked="number0Button_Clicked"/>
+        <Button x:Name="divideButton" Text="/" FontSize="50" Grid.Row="1" Grid.Column="3" BackgroundColor="Gray" Clicked="divideButton_Clicked"/>
+        <Button x:Name="multiplicationButton" Text="*" FontSize="50" Grid.Row="2" Grid.Column="3" BackgroundColor="Gray" Clicked="multiplicationButton_Clicked"/>
+        <Button x:Name="subtractionButton" Text="-" FontSize="50" Grid.Row="3" Grid.Column="3" BackgroundColor="Gray" Clicked="subtractionButton_Clicked"/>
+        <Button x:Name="additionButton" Text="+" FontSize="50" Grid.Row="4" Grid.Column="3" BackgroundColor="Gray" Clicked="additionButton_Clicked"/>
+        <Button x:Name="resultButton" Text="=" FontSize="50" Grid.Row="4" Grid.Column="2" BackgroundColor="Gray" Clicked="resultButton_Clicked"/>
+        
+    </Grid>
+</ContentPage>
