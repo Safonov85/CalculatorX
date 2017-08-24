@@ -13,7 +13,7 @@ namespace CalculatorX
 		public MainPage()
 		{
 			InitializeComponent();
-
+			
 			buttons[0] = number0Button;
 			buttons[1] = number1Button;
 			buttons[2] = number2Button;
