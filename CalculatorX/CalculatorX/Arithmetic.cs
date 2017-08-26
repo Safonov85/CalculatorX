@@ -10,24 +10,44 @@ namespace CalculatorX
 	{
 		public string addition, subtraction, multiplicaiton, division;
 
-		public void AddTowNumbers(string first, string second)
+		public double AddTowNumbers(string first, string second)
 		{
+			double result, firstValue, secondValue;
+			firstValue = Convert.ToDouble(first);
+			secondValue = Convert.ToDouble(second);
+			result = firstValue + secondValue;
 
+			return result;
 		}
 
-		public void SubtractTowNumbers(string first, string second)
+		public double SubtractTowNumbers(string first, string second)
 		{
+			double result, firstValue, secondValue;
+			firstValue = Convert.ToDouble(first);
+			secondValue = Convert.ToDouble(second);
+			result = firstValue - secondValue;
 
+			return result;
 		}
 
-		public void MultiplyTowNumbers(string first, string second)
+		public double MultiplyTowNumbers(string first, string second)
 		{
+			double result, firstValue, secondValue;
+			firstValue = Convert.ToDouble(first);
+			secondValue = Convert.ToDouble(second);
+			result = firstValue * secondValue;
 
+			return result;
 		}
 
-		public void DivideTowNumbers(string first, string second)
+		public double DivideTowNumbers(string first, string second)
 		{
+			double result, firstValue, secondValue;
+			firstValue = Convert.ToDouble(first);
+			secondValue = Convert.ToDouble(second);
+			result = firstValue / secondValue;
 
+			return result;
 		}
 	}
 }

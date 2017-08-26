@@ -12,17 +12,17 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="250"/>
+            <RowDefinition Height="200"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
+            
         </Grid.RowDefinitions>
 
-        <Label x:Name="resultLabel" Text="" FontSize="40" Grid.Row="0" Grid.Column="0" Margin="10"/>
-            
+        <Label x:Name="resultLabel" Text="" HorizontalTextAlignment="End" FontSize="35" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Margin="10"/>
 
-        <Button x:Name="number7Button" Text="7" FontSize="50" Grid.Row="1" Grid.Column="0" BackgroundColor="Gray"  Clicked="number7Button_Clicked"/>
+        <Button x:Name="number7Button" Text="7" FontSize="50" BorderColor="DarkBlue" Grid.Row="1" Grid.Column="0" BackgroundColor="Gray"  Clicked="number7Button_Clicked"/>
         <Button x:Name="number4Button" Text="4" FontSize="50" Grid.Row="2" Grid.Column="0" BackgroundColor="Gray"  Clicked="number4Button_Clicked"/>
         <Button x:Name="number1Button" Text="1" FontSize="50" Grid.Row="3" Grid.Column="0" BackgroundColor="Gray"  Clicked="number1Button_Clicked"/>
         <Button x:Name="number8Button" Text="8" FontSize="50" Grid.Row="1" Grid.Column="1" BackgroundColor="Gray" Clicked="number8Button_Clicked"/>
@@ -36,8 +36,8 @@
         <Button x:Name="multiplicationButton" Text="*" FontSize="50" Grid.Row="2" Grid.Column="3" BackgroundColor="Gray" Clicked="multiplicationButton_Clicked"/>
         <Button x:Name="subtractionButton" Text="-" FontSize="50" Grid.Row="3" Grid.Column="3" BackgroundColor="Gray" Clicked="subtractionButton_Clicked"/>
         <Button x:Name="additionButton" Text="+" FontSize="50" Grid.Row="4" Grid.Column="3" BackgroundColor="Gray" Clicked="additionButton_Clicked"/>
-        <Button x:Name="resultButton" Text="=" FontSize="50" Grid.Row="4" Grid.Column="2" BackgroundColor="Gray" Clicked="resultButton_Clicked"/>
+        <Button x:Name="resultButton" Text="=" FontSize="50" Grid.Row="4" Grid.Column="2" BackgroundColor="LightCoral" Clicked="resultButton_Clicked"/>
+        <Button x:Name="dotButton" Text="," FontSize="50" Grid.Row="4" Grid.Column="0" BackgroundColor="Gray" Clicked="dotButton_Clicked"/>
         
-
     </Grid>
 </ContentPage>

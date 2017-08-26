@@ -9,7 +9,20 @@ namespace CalculatorX
 {
 	public partial class MainPage : ContentPage
 	{
-		private Button[] buttons = new Button[15];
+		enum Operator
+		{
+			None,
+			Add,
+			Subtract,
+			Multiply,
+			Divide
+		}
+
+		private Button[] buttons = new Button[16];
+		private string firstValue, secondValue;
+		Operator Operate = Operator.None;
+		Arithmetic arithmetic;
+
 		public MainPage()
 		{
 			InitializeComponent();
@@ -29,14 +42,25 @@ namespace CalculatorX
 			buttons[12] = subtractionButton;
 			buttons[13] = additionButton;
 			buttons[14] = resultButton;
+			buttons[15] = dotButton;
+			arithmetic = new Arithmetic();
 
-			resultLabel.BackgroundColor = Color.LightBlue;
-			resultLabel.TextColor = Color.DarkGray;
+			resultLabel.BackgroundColor = Color.DarkSeaGreen;
+			resultLabel.TextColor = Color.White;
+			resultLabel.GestureRecognizers.Add(new TapGestureRecognizer((view) => OnResultLabelClicked()));
 
-			foreach(Button button in buttons)
+			foreach (Button button in buttons)
 			{
 				button.TextColor = Color.White;
 			}
+		}
+
+		private void OnResultLabelClicked()
+		{
+			resultLabel.Text = "";
+			firstValue = null;
+			secondValue = null;
+			Operate = Operator.None;
 		}
 
 		private void number7Button_Clicked(object sender, EventArgs e)
@@ -89,29 +113,63 @@ namespace CalculatorX
 			resultLabel.Text += "0";
 		}
 
+		private void dotButton_Clicked(object sender, EventArgs e)
+		{
+			resultLabel.Text += ",";
+		}
+
 		private void divideButton_Clicked(object sender, EventArgs e)
 		{
-
+			firstValue = resultLabel.Text;
+			resultLabel.Text = "";
+			Operate = Operator.Divide;
 		}
 
 		private void multiplicationButton_Clicked(object sender, EventArgs e)
 		{
-
+			firstValue = resultLabel.Text;
+			resultLabel.Text = "";
+			Operate = Operator.Multiply;
 		}
 
 		private void subtractionButton_Clicked(object sender, EventArgs e)
 		{
-
+			firstValue = resultLabel.Text;
+			resultLabel.Text = "";
+			Operate = Operator.Subtract;
 		}
 
 		private void additionButton_Clicked(object sender, EventArgs e)
 		{
-
+			firstValue = resultLabel.Text;
+			resultLabel.Text = "";
+			Operate = Operator.Add;
 		}
 
 		private void resultButton_Clicked(object sender, EventArgs e)
 		{
+			secondValue = resultLabel.Text;
 
+			if(Operate == Operator.Multiply)
+			{
+				resultLabel.Text = "";
+				resultLabel.Text = arithmetic.MultiplyTowNumbers(firstValue, secondValue).ToString();
+			}
+			else if(Operate == Operator.Divide)
+			{
+				resultLabel.Text = "";
+				resultLabel.Text = arithmetic.DivideTowNumbers(firstValue, secondValue).ToString();
+			}
+			else if (Operate == Operator.Add)
+			{
+				resultLabel.Text = "";
+				resultLabel.Text = arithmetic.AddTowNumbers(firstValue, secondValue).ToString();
+			}
+			else if (Operate == Operator.Subtract)
+			{
+				resultLabel.Text = "";
+				resultLabel.Text = arithmetic.SubtractTowNumbers(firstValue, secondValue).ToString();
+			}
 		}
 	}
 }
