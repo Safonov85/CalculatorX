@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:CalculatorX"
-             x:Class="CalculatorX.MainPage">
+             x:Class="CalculatorX.MainPage"
+             BackgroundColor="#2a2a2a">
 
     <Grid Margin="0,20,0,0">
         <Grid.ColumnDefinitions>
@@ -37,7 +38,7 @@
         <Button x:Name="subtractionButton" Text="-" FontSize="50" Grid.Row="3" Grid.Column="3" BackgroundColor="Gray" Clicked="subtractionButton_Clicked"/>
         <Button x:Name="additionButton" Text="+" FontSize="50" Grid.Row="4" Grid.Column="3" BackgroundColor="Gray" Clicked="additionButton_Clicked"/>
         <Button x:Name="resultButton" Text="=" FontSize="50" Grid.Row="4" Grid.Column="2" BackgroundColor="LightCoral" Clicked="resultButton_Clicked"/>
-        <Button x:Name="dotButton" Text="," FontSize="50" Grid.Row="4" Grid.Column="0" BackgroundColor="Gray" Clicked="dotButton_Clicked"/>
+        <Button x:Name="dotButton" Text="." FontSize="50" Grid.Row="4" Grid.Column="0" BackgroundColor="Gray" Clicked="dotButton_Clicked"/>
         
     </Grid>
 </ContentPage>

@@ -115,7 +115,10 @@ namespace CalculatorX
 
 		private void dotButton_Clicked(object sender, EventArgs e)
 		{
-			resultLabel.Text += ",";
+			if (!resultLabel.Text.Contains("."))
+			{
+				resultLabel.Text += ".";
+			}
 		}
 
 		private void divideButton_Clicked(object sender, EventArgs e)
@@ -153,22 +156,26 @@ namespace CalculatorX
 			if(Operate == Operator.Multiply)
 			{
 				resultLabel.Text = "";
-				resultLabel.Text = arithmetic.MultiplyTowNumbers(firstValue, secondValue).ToString();
+				resultLabel.Text = firstValue + " * " + secondValue + " = " + 
+				arithmetic.MultiplyTowNumbers(firstValue, secondValue).ToString();
 			}
 			else if(Operate == Operator.Divide)
 			{
 				resultLabel.Text = "";
-				resultLabel.Text = arithmetic.DivideTowNumbers(firstValue, secondValue).ToString();
+				resultLabel.Text = firstValue + " / " + secondValue + " = " + 
+				arithmetic.DivideTowNumbers(firstValue, secondValue).ToString();
 			}
 			else if (Operate == Operator.Add)
 			{
 				resultLabel.Text = "";
-				resultLabel.Text = arithmetic.AddTowNumbers(firstValue, secondValue).ToString();
+				resultLabel.Text = firstValue + " + " + secondValue + " = " + 
+				arithmetic.AddTowNumbers(firstValue, secondValue).ToString();
 			}
 			else if (Operate == Operator.Subtract)
 			{
 				resultLabel.Text = "";
-				resultLabel.Text = arithmetic.SubtractTowNumbers(firstValue, secondValue).ToString();
+				resultLabel.Text = firstValue + " - " + secondValue + " = " + 
+				arithmetic.SubtractTowNumbers(firstValue, secondValue).ToString();
 			}
 		}
 	}
