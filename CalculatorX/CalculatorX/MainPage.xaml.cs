@@ -115,6 +115,10 @@ namespace CalculatorX
 
 		private void dotButton_Clicked(object sender, EventArgs e)
 		{
+			if (string.IsNullOrEmpty(resultLabel.Text))
+			{
+				resultLabel.Text += "0.";
+			}
 			if (!resultLabel.Text.Contains("."))
 			{
 				resultLabel.Text += ".";
@@ -123,34 +127,51 @@ namespace CalculatorX
 
 		private void divideButton_Clicked(object sender, EventArgs e)
 		{
-			firstValue = resultLabel.Text;
+			if (!resultLabel.Text.Contains("="))
+			{
+				firstValue = resultLabel.Text;
+			}
 			resultLabel.Text = "";
 			Operate = Operator.Divide;
 		}
 
 		private void multiplicationButton_Clicked(object sender, EventArgs e)
 		{
-			firstValue = resultLabel.Text;
+			if (!resultLabel.Text.Contains("="))
+			{
+				firstValue = resultLabel.Text;
+			}
 			resultLabel.Text = "";
 			Operate = Operator.Multiply;
 		}
 
 		private void subtractionButton_Clicked(object sender, EventArgs e)
 		{
-			firstValue = resultLabel.Text;
+			if (!resultLabel.Text.Contains("="))
+			{
+				firstValue = resultLabel.Text;
+			}
 			resultLabel.Text = "";
 			Operate = Operator.Subtract;
 		}
 
 		private void additionButton_Clicked(object sender, EventArgs e)
 		{
-			firstValue = resultLabel.Text;
+			if (!resultLabel.Text.Contains("="))
+			{
+				firstValue = resultLabel.Text;
+			}
 			resultLabel.Text = "";
 			Operate = Operator.Add;
 		}
 
 		private void resultButton_Clicked(object sender, EventArgs e)
 		{
+			if (string.IsNullOrEmpty(resultLabel.Text))
+			{
+				DisplayAlert("Oops", "Please put in secondary value.", "OK");
+				return;
+			}
 			secondValue = resultLabel.Text;
 
 			if(Operate == Operator.Multiply)
@@ -158,24 +179,32 @@ namespace CalculatorX
 				resultLabel.Text = "";
 				resultLabel.Text = firstValue + " * " + secondValue + " = " + 
 				arithmetic.MultiplyTowNumbers(firstValue, secondValue).ToString();
+				firstValue = arithmetic.MultiplyTowNumbers(firstValue, secondValue).ToString();
+				secondValue = null;
 			}
 			else if(Operate == Operator.Divide)
 			{
 				resultLabel.Text = "";
 				resultLabel.Text = firstValue + " / " + secondValue + " = " + 
 				arithmetic.DivideTowNumbers(firstValue, secondValue).ToString();
+				firstValue = arithmetic.DivideTowNumbers(firstValue, secondValue).ToString();
+				secondValue = null;
 			}
 			else if (Operate == Operator.Add)
 			{
 				resultLabel.Text = "";
 				resultLabel.Text = firstValue + " + " + secondValue + " = " + 
 				arithmetic.AddTowNumbers(firstValue, secondValue).ToString();
+				firstValue = arithmetic.AddTowNumbers(firstValue, secondValue).ToString();
+				secondValue = null;
 			}
 			else if (Operate == Operator.Subtract)
 			{
 				resultLabel.Text = "";
 				resultLabel.Text = firstValue + " - " + secondValue + " = " + 
 				arithmetic.SubtractTowNumbers(firstValue, secondValue).ToString();
+				firstValue = arithmetic.SubtractTowNumbers(firstValue, secondValue).ToString();
+				secondValue = null;
 			}
 		}
 	}

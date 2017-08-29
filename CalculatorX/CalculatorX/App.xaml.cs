@@ -7,6 +7,7 @@ using Xamarin.Forms;
 
 namespace CalculatorX
 {
+	
 	public partial class App : Application
 	{
 		public App()
