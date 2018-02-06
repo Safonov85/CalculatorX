@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.12
+VisualStudioVersion = 15.0.26730.15
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculatorX.Android", "CalculatorX\CalculatorX.Android\CalculatorX.Android.csproj", "{B362E1EF-0548-4DFC-9F11-7825CE7098C5}"
 EndProject
@@ -108,5 +108,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {804D35A1-4397-4B48-A5E4-BC6DB6CE9D42}
 	EndGlobalSection
 EndGlobal

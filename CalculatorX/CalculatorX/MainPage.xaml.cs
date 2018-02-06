@@ -9,19 +9,12 @@ namespace CalculatorX
 {
 	public partial class MainPage : ContentPage
 	{
-		enum Operator
-		{
-			None,
-			Add,
-			Subtract,
-			Multiply,
-			Divide
-		}
 
 		private Button[] buttons = new Button[16];
 		private string firstValue, secondValue;
 		Operator Operate = Operator.None;
 		Arithmetic arithmetic;
+		Arithmetic asdf = new Arithmetic();
 
 		public MainPage()
 		{
